@@ -62,6 +62,19 @@ if st.button("Summarize the Content from YT or Website"):
                 "word_limit": Word_limit
                 })
 
+                 st.success("Summary generated successfully!")
+
+           
+                st.write(output_summary)
+
+
+                st.download_button(
+                label="📥 Download Summary as .txt",
+                data=output_summary,
+                file_name="summary.txt",
+                mime="text/plain"
+            )
+
 
                 st.success(output_summary)
         except Exception as e:
