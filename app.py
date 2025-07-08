@@ -62,7 +62,7 @@ if st.button("Summarize the Content from YT or Website"):
                 "word_limit": Word_limit
                 })
 
-                 st.success("Summary generated successfully!")
+                st.success("Summary generated successfully!")
 
            
                 st.write(output_summary)
