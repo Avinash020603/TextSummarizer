@@ -21,7 +21,12 @@ with st.sidebar:
 generic_url=st.text_input("URL",label_visibility="collapsed")
 
 
-llm =ChatGroq(model="gemma2-9b-it", groq_api_key=groq_api_key)
+llm = None
+if groq_api_key.strip():
+    try:
+        llm = ChatGroq(model="gemma2-9b-it", groq_api_key=groq_api_key)
+    except Exception as e:
+        st.error("Invalid Groq API Key or model initialization failed.")
 
 prompt_template="""
 Provide a summary of the following content in {word_limit} words:
